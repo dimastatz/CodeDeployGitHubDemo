@@ -1,10 +1,10 @@
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.HttpMethods._
-import akka.http.scaladsl.model._
-import akka.stream.ActorMaterializer
 
 import scala.io.StdIn
+import akka.http.scaladsl.model._
+import akka.stream.ActorMaterializer
 
 object WebServer {
   def main(args: Array[String]) {
@@ -36,5 +36,6 @@ object WebServer {
     StdIn.readLine() // let it run until user presses return
     bindingFuture.flatMap(_.unbind()).onComplete(_ => system.terminate())
 
+    // Some comment
   }
 }
